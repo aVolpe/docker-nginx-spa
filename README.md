@@ -6,12 +6,11 @@ This is a fork of [SocialEngine/docker-nginx-spa](https://github.com/SocialEngin
 - Removed ability to configure the site using env vars
 
 ## Supported tags and `Dockerfile` links
-
--	[`latest` (*Dockerfile*)][latest]
+-	`latest` (*Dockerfile*)
 
 ## Included on top of [base][base image] nginx image
 
-- [pushState][push state] support. Every request is routed to `/app/index.html`. Useful for the clean urls (no `!#`)
+- pushState support. Every request is routed to `/app/index.html`. Useful for the clean urls (no `!#`)
 
 # App Setup
 
