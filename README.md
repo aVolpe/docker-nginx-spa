@@ -1,4 +1,4 @@
-This is a Docker image used to serve a Single Page App (pure frontend javascript) using nginx, it support PushState, and includes a way to pass configuration at run time.
+This is a Docker image used to serve a Single Page App (pure frontend javascript) using nginx with pushState support.
 
 This is a fork of [SocialEngine/docker-nginx-spa](https://github.com/SocialEngine/docker-nginx-spa). Changes include:
 - armv7/armv6/amd64 support (not just amd64)
