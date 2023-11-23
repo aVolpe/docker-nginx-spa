@@ -3,6 +3,7 @@ This is a Docker image used to serve a Single Page App (pure frontend javascript
 This is a fork of [SocialEngine/docker-nginx-spa](https://github.com/SocialEngine/docker-nginx-spa). Changes include:
 - armv7/armv6/amd64 support (not just amd64)
 - Using `nginx:alpine-stable` as base
+- Removed ability to configure the site using env vars
 
 ## Supported tags and `Dockerfile` links
 
