@@ -1,6 +1,10 @@
 FROM nginx:stable-alpine
 LABEL maintainer="Niklas Mollenhauer <nikeee@outlook.com>"
 
+# This tool converts env vars into json to be injected into the config
+ADD https://s3.amazonaws.com/se-com-docs/bins/json_env /usr/local/bin/
+RUN chmod +x /usr/local/bin/json_env
+
 # Do not start daemon for nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
@@ -12,4 +16,8 @@ COPY expires.conf /etc/nginx/conf.d/expires.conf
 RUN mkdir /app \
     && echo "<code>Add your index.html to /app: COPY index.html /app/index.html</code>" > /app/index.html
 
+# Copy our start script
+COPY start-container.sh /usr/local/bin/start-container
+
+ENTRYPOINT ["start-container"]
 CMD ["nginx"]
