@@ -13,8 +13,9 @@ COPY nginx-site.conf /etc/nginx/conf.d/default.conf
 COPY expires.conf /etc/nginx/conf.d/expires.conf
 
 # Set a path to config file to be written, can be changed at runtime
+ENV CONFIG_FILE_PATH /app
 RUN mkdir /app \
-    && echo "<code>Add your index.html to /app: COPY index.html /app/index.html</code>" > /app/index.html
+    && echo "<code>Add your index.html to $CONFIG_FILE_PATH: COPY index.html $CONFIG_FILE_PATH/index.html</code>" > /app/index.html
 
 # Copy our start script
 COPY start-container.sh /usr/local/bin/start-container
